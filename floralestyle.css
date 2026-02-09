@@ -1,0 +1,149 @@
+body {
+  background: linear-gradient(180deg, #fffbe6 0%, #fffdf7 70%);
+}
+
+.project-presentation {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  margin-bottom: 2.5rem;
+}
+
+.project-logo {
+
+  width: 350px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(246, 184, 23, 0.5));
+  animation: fadeInScale 2s ease-out;
+}
+
+
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 0 20px rgba(246, 184, 23, 0.1);
+  backdrop-filter: blur(10px);
+  animation: slideFade 1.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.description-box:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.description-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.description-box:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description-box h3 {
+  margin-bottom: 0.7rem;
+  color: #f6b817;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.8rem;
+  text-shadow: 0 0 6px #f6b81755;
+}
+
+.description-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  width: 50px;
+}
+.description-box img {
+    width: 700px;
+}
+.open-site {
+  background: #f6b817;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(246, 184, 23, 0.7);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.open-site:hover {
+  background: #c49413; /* Une teinte plus foncée pour le hover */
+  box-shadow: 0 10px 20px rgba(246, 184, 23, 0.7);
+  transform: translateY(-3px);
+}
+/* Bouton pour retourner vers le haut */
+.btn1 {
+    height: 50px;
+    width: 50px;
+    background: #f6b817;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 990;
+}
+.btn1 img {
+    height: 50px;
+}
+
+.btn1:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 202, 202);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #fffbe6 0%, #fffdf7 70%);
+}

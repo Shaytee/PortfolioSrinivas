@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sawarabi+Mincho&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Sawarabi Mincho', serif;
+  background: linear-gradient(135deg, #fff7f8, #ffe5f0);
+  color: #3a2e3c;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 700px;
+  z-index: 1;
+}
+
+.kanji-bg {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Sawarabi Mincho', serif;
+  font-size: 12rem;
+  color: rgba(255, 153, 0, 0.448);
+  user-select: none;
+  display: flex;
+  gap: 1.5rem;
+  pointer-events: none;
+  animation: kanjiFloat 8s ease-in-out infinite alternate;
+}
+
+.kanji-bg span {
+  opacity: 0.3;
+  animation: kanjiPulse 6s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 1.5s);
+}
+
+.kanji-bg span:nth-child(1) { --i: 0; }
+.kanji-bg span:nth-child(2) { --i: 1; }
+.kanji-bg span:nth-child(3) { --i: 2; }
+.kanji-bg span:nth-child(4) { --i: 3; }
+
+@keyframes kanjiFloat {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(-15px); }
+}
+
+@keyframes kanjiPulse {
+  0% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+  50% { opacity: 0.5; transform: scale(1.1) rotate(3deg); }
+  100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+}
+
+.brush-text {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 3.8rem;
+  color: #ff9900;
+  text-shadow:
+    0 0 5px #ff990088,
+    0 0 1px #ff9900cc,
+    0 0 20px #ff9900dd;
+  animation: brushStroke 3s ease forwards;
+  opacity: 0;
+  margin-bottom: 1rem;
+}
+
+@keyframes brushStroke {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+.subheader {
+  font-family: 'Sawarabi Mincho', serif;
+  font-size: 1.5rem;
+  color: #9b7e5f;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeInUp 2.5s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-button {
+  background: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.9rem 2.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(255, 153, 0, 0.4);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 2.5s ease forwards;
+  animation-delay: 2.7s;
+}
+
+.scroll-button:hover {
+  background: #e68a00;
+  box-shadow: 0 12px 25px rgba(230, 138, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+/* Small floating sakura petals particles */
+.petal {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 50% 50%, #ffe0b3 0%, transparent 70%);
+  border-radius: 50% 40% 50% 40% / 50% 60% 40% 50%;
+  opacity: 0.8;
+  pointer-events: none;
+  animation-name: petalFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-delay: 0s;
+  z-index: 0;
+}
+
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+@media (max-width: 480px) {
+  .brush-text {
+    font-size: 2.2rem;
+    text-shadow:
+      0 0 3px #ff990088,
+      0 0 1px #ff9900cc,
+      0 0 10px #ff9900cc;
+  }
+}
+
+#sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1; /* au-dessus de l’arrière-plan */
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -10vh;
+  background-color: #ffc107;
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+}
+
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}

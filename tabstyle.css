@@ -1,0 +1,173 @@
+body {
+  background: linear-gradient(180deg, #e6f0ff 0%, #f7fcff 70%);
+}
+
+.project-presentation {
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container {
+  margin-bottom: 2.5rem;
+}
+
+.project-logo {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(60, 80, 100, 0.4));
+  animation: fadeInScale 2s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 0 20px rgba(80, 60, 40, 0.15);
+  backdrop-filter: blur(10px);
+  animation: slideFade 1.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.description-box:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.description-box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.description-box:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description-box h3 {
+  margin-bottom: 0.7rem;
+  color: #2f7233; /* marron */
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.8rem;
+  text-shadow: 0 0 6px #a1887f88;
+}
+
+.description-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #3e3e3e;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  width: 50px;
+}
+.description-box img {
+    width: 700px;
+}
+.open-site {
+  background: #0097b2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 188, 230, 0.7);
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.open-site:hover {
+  background: #016476;
+  box-shadow: 0 10px 20px rgba(0, 188, 230, 0.7);
+  transform: translateY(-3px);
+}
+
+.btn1 {
+    height: 50px;
+    width: 50px;
+    background: #0097b2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 990;
+}
+.btn1 img {
+    height: 50px;
+}
+
+.btn1:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(202, 202, 202);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+      background: linear-gradient(180deg, #e6f0ff 0%, #f7fcff 70%);
+}
+
+/* Global */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+
+
+body { overflow-x: hidden; }
+
+/* Texte fluide */
+h1 { font-size: clamp(2rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); }
+p  { font-size: clamp(1rem, 1.2vw, 1.2rem); }
+
+/* Anti casse layout (email, mots longs) */
+p, a { overflow-wrap: anywhere; word-break: break-word; }
+
+/* Sections et contenus */
+section, header, footer, main, nav {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Boutons */
+button { max-width: 100%; white-space: normal; }
