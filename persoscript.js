@@ -59,3 +59,33 @@ btn.addEventListener('click', () => {
     })
 })
 }
+
+// --- Carrousel simple pour les .carousel-slide ---
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+  const prev = document.querySelector('.carousel-button.prev');
+  const next = document.querySelector('.carousel-button.next');
+  if (!track || slides.length === 0 || !prev || !next) return;
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  next.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  });
+
+  prev.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+  // position initiale
+  updateCarousel();
+});
