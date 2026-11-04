@@ -42,5 +42,35 @@ for (let i = 0; i < petalsCount; i++) {
   sakuraContainer.appendChild(petal);
 }
 
+// Transition portail avant d’ouvrir le portfolio
+const portalLink = document.querySelector('.portal-link');
+if (portalLink) {
+  portalLink.addEventListener('click', (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+
+    event.preventDefault();
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.location.assign(portalLink.href);
+      return;
+    }
+
+    const button = portalLink.getBoundingClientRect();
+    document.documentElement.style.setProperty('--portal-x', `${button.left + button.width / 2}px`);
+    document.documentElement.style.setProperty('--portal-y', `${button.top + button.height / 2}px`);
+    document.body.classList.add('portal-entering');
+
+    window.setTimeout(() => {
+      const destination = new URL(portalLink.href);
+      destination.searchParams.set('portal-entry', '1');
+      destination.searchParams.set('portal-x', `${button.left + button.width / 2}`);
+      destination.searchParams.set('portal-y', `${button.top + button.height / 2}`);
+      window.location.assign(destination.href);
+    }, 850);
+  });
+}
+
 // Lancer une fois le scroll pour déclencher animation si déjà visible
 window.dispatchEvent(new Event('scroll'));

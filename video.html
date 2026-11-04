@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Srinivas Muralitharan</title>
+  <link rel="stylesheet" href="videostyle.css" />
+</head>
+<body>
+  <nav class="top-menu" aria-label="Menu principal">
+    <div class="nav-inner">
+      <div class="nav-links">
+        <a href="Accueil.html#accueil">Accueil</a>
+        <a href="Accueil.html#apropos">À propos</a>
+        <a href="Accueil.html#projets">Projets</a>
+        <a href="Accueil.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <a href="Accueil.html" aria-label="Retour accueil">
+    <img src="img/flecheback.png" alt="Retour" />
+  </a>
+
+  <section class="project-presentation reveal">
+    <div class="logo-container">
+      <img src="img/video.png" alt="Logo du projet video" class="project-logo" />
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="carousel-btn prev" aria-label="Vidéo précédente">‹</button>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+
+          <article class="slide active">
+            <div class="media-box">
+              <iframe src="https://www.youtube.com/embed/HxB5eO6dxBU" title="Vidéo 1" allowfullscreen></iframe>
+            </div>
+            <div class="text-box">
+              <h3>Vidéo Backstage Flor'Ale</h3>
+              <p>
+                Cette première vidéo met en avant le travail de montage et la narration visuelle.
+                J’y ai joué sur les plans, le rythme et les transitions pour créer un rendu dynamique et immersif.
+              </p>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="media-box">
+              <iframe src="https://www.youtube.com/embed/XATe5BrilkE" title="Vidéo 2" allowfullscreen></iframe>
+            </div>
+            <div class="text-box">
+              <h3>Publicité Flor'Ale</h3>
+              <p>
+                Pour cette séquence, j’ai travaillé l’ambiance, la mise en scène et la cohérence visuelle.
+                L’objectif était de faire passer une atmosphère claire et immersive, avec une structure simple mais efficace.
+              </p>
+            </div>
+          </article>
+
+          <article class="slide">
+            <div class="media-box">
+              <iframe src="https://www.youtube.com/embed/4eO7OFXZLoo" title="Vidéo 3" allowfullscreen></iframe>
+            </div>
+            <div class="text-box">
+              <h3>Hier Encore Clip Vidéo</h3>
+              <p>
+                Cette vidéo souligne la partie création audiovisuelle du portfolio, avec du montage, de la composition
+                et un travail sur le rythme visuel afin de rendre le message plus percutant et mémorable.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Vidéo suivante">›</button>
+    </div>
+  </section>
+
+  <div class="btn1">
+    <img src="img/arrow-up-solid.svg" alt="Flèche pour remonter vers le haut" class="icone" />
+  </div>
+
+  <script src="videoscript.js"></script>
+</body>
+</html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 body {
   background: linear-gradient(180deg, #e6f0ff 0%, #f7fcff 70%);
 }
@@ -171,3 +173,93 @@ section, header, footer, main, nav {
 
 /* Boutons */
 button { max-width: 100%; white-space: normal; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.description-box h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+p,
+li,
+figcaption,
+blockquote,
+label {
+  font-weight: 300;
+}
+
+button,
+.open-site {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.top-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  width: 100%;
+  padding: 0.7rem 0;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.nav-inner {
+  width: min(820px, calc(100% - 1.5rem));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.top-menu a {
+  color: rgba(58, 46, 60, 0.82);
+  text-decoration: none;
+  font-weight: 300;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.top-menu a:hover,
+.top-menu a:focus-visible {
+  color: #ff9933;
+  background: rgba(255, 153, 51, 0.05);
+}
+
+@media (max-width: 720px) {
+  .top-menu {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.2rem;
+  }
+
+  .top-menu a {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.82rem;
+  }
+}

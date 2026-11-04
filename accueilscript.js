@@ -1,5 +1,11 @@
 // Animation type manga/anime dès le chargement
 window.addEventListener('DOMContentLoaded', () => {
+  if (document.documentElement.classList.contains('portal-arriving')) {
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('portal-arriving');
+    }, 1000);
+  }
+
   const reveals = document.querySelectorAll('.reveal');
   reveals.forEach((el, i) => {
     setTimeout(() => {

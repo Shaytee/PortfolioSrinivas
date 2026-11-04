@@ -88,4 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', updateCarousel);
   // position initiale
   updateCarousel();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 4bb1ea7 (portfolio)

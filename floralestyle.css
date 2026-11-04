@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 body {
   background: linear-gradient(180deg, #fffbe6 0%, #fffdf7 70%);
 }
@@ -95,6 +97,30 @@ a img {
 .description-box img {
     width: 700px;
 }
+
+.presentation-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.presentation-gallery img {
+  width: 100%;
+  height: 360px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .presentation-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .presentation-gallery img {
+    height: auto;
+    max-height: 360px;
+  }
+}
 .open-site {
   background: #f6b817;
   color: #fff;
@@ -146,4 +172,94 @@ a img {
 
 ::-webkit-scrollbar-track {
       background: linear-gradient(180deg, #fffbe6 0%, #fffdf7 70%);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.description-box h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-shadow: none;
+}
+
+p,
+li,
+figcaption,
+blockquote,
+label {
+  font-weight: 300;
+}
+
+button,
+.open-site {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.top-menu {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  width: 100%;
+  padding: 0.7rem 0;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.nav-inner {
+  width: min(820px, calc(100% - 1.5rem));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.top-menu a {
+  color: rgba(58, 46, 60, 0.82);
+  text-decoration: none;
+  font-weight: 300;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.top-menu a:hover,
+.top-menu a:focus-visible {
+  color: #ff9933;
+  background: rgba(255, 153, 51, 0.05);
+}
+
+@media (max-width: 720px) {
+  .top-menu {
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 0.2rem;
+  }
+
+  .top-menu a {
+    padding: 0.55rem 0.7rem;
+    font-size: 0.82rem;
+  }
 }
